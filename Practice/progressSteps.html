@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+
+    <style>
+        
+        *{
+            margin : 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main{
+            height : 100vh;
+            width : 100%;
+            background-color: cornsilk;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            height : 100px;
+            width : 400px;
+            /* border : 3px solid yellow; */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .circles{
+            height : 50%;
+            width : 100%;
+            /* border : 1px solid green; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .progress{
+            height : 40px;
+            width : 40px;
+            border : 4px solid white;
+            background-color: cadetblue;
+            border-radius: 50px;
+            z-index: 100;
+        }
+
+        .bar{
+            height : 10px;
+            width : 100%;
+            position: absolute;
+            left : 0;
+            top : 40%;
+            background-color: white;
+        }
+
+        .fillBar{
+            height : 100%;
+            width : 0;
+            background-color: blueviolet;
+            transition: all .3s linear;
+        }
+
+        .color{
+            border : 4px solid hotpink
+        }
+
+        .buttons{
+            height : 50%;
+            width : 100%;
+            /* border : 1px solid green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        #styles{
+            height : 25px;
+            width : 100px;
+            border: none;
+            background-color: aquamarine;
+            color : rgb(148, 9, 9);
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:disabled{
+            cursor: not-allowed !important;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <section class = "main">
+        <div class = "container">
+            <div class = "circles">
+                <div class = "bar">
+                    <div class = "fillBar"></div>
+                </div>
+                <div class = "progress circle1 color"></div>
+                <div class = "progress circle2"></div>
+                <div class = "progress circle3"></div>
+                <div class = "progress circle4"></div>
+                <div class = "progress circle5"></div>
+            </div>
+            <div class = "buttons">
+                <button class = "btn1" id = "styles" disabled>Previous</button>
+                <button class = "btn2" id = "styles">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./progressSteps.js"></script>
+
+</body>
+</html>
